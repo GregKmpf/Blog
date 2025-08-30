@@ -1,0 +1,6 @@
+# Ignorar pastas de dependências
+node_modules/
+dist/
+
+# Ignorar arquivos de ambiente com credenciais
+.env
