@@ -1,0 +1,98 @@
+RELATORIO DO PRIMEIRO COMMIT - relatorio IA (poupar tempo)
+
+API-BLOG/
+│
+├── server.js         → Versão inicial simples do servidor em JavaScript
+├── server.ts         → Versão mais completa em TypeScript com banco de dados
+├── data-source.ts    → Configuração da conexão com o banco de dados (TypeORM)
+├── entity/
+│   └── users.ts      → Definição da entidade "User" (representa uma tabela no banco)
+├── tsconfig.json     → Configurações do TypeScript
+└── package.json      → Dependências do projeto
+
+
+🚀 server.ts (Servidor principal com TypeScript)
+
+Inicializa o servidor Express na porta definida em .env (padrão 3001).
+
+Usa dotenv para carregar variáveis de ambiente.
+
+Inicializa a conexão com o banco via AppDataSource (TypeORM).
+
+Se houver erro ao conectar, o servidor não inicia.
+
+
+🔌data-source.ts (Conexão com o banco)
+
+Usa TypeORM para configurar a conexão com o PostgreSQL.
+
+Pega os dados do banco de dados através das variáveis .env.
+
+Adiciona a entidade User para mapear a tabela no banco.
+
+synchronize: true: cria/atualiza tabelas automaticamente (bom para desenvolvimento, não recomendado em produção).
+
+
+👤 users.ts (Entidade do banco de dados)
+
+Define a entidade User, que representa uma tabela no banco com 3 colunas:
+
+id: número, gerado automaticamente (chave primária).
+
+name: texto.
+
+email: texto único (não pode repetir).
+
+⚙️ tsconfig.json (Configuração do TypeScript)
+
+Configura o TypeScript para lidar bem com Node.js, ESNext e decorators (usados pelo TypeORM).
+
+Habilita opções importantes como:
+
+experimentalDecorators
+
+emitDecoratorMetadata
+
+Usa strict: true para verificar erros com mais rigidez.
+
+📝 server.js (Versão simples)
+
+Versão inicial e simplificada de servidor Express em JavaScript.
+
+Apenas responde com texto quando acessa a raiz (/).
+
+É útil para testes rápidos, mas não usa banco de dados.
+
+📦 Dependências utilizadas
+
+express: framework para criar servidores web.
+
+typeorm: ORM para interagir com banco de dados.
+
+dotenv: carrega variáveis de ambiente.
+
+reflect-metadata: necessário para funcionar com TypeORM e decorators.
+
+cors: lida com segurança e permissões de requisição.
+
+nodemon: recarrega automaticamente o servidor durante o desenvolvimento.
+
+
+🔄 Fluxo de funcionamento
+
+Você roda o projeto com:
+
+npm run dev
+
+
+O server.ts é executado:
+
+Lê variáveis de ambiente do .env.
+
+Conecta ao banco de dados.
+
+Inicia o servidor.
+
+Sua API está disponível em:
+
+http://localhost:3001/
