@@ -11,10 +11,12 @@ const PORT = process.env.PORT ? Number(process.env.PORT) : 3001;
 // Cria a instância do seu aplicativo Express.js
 const app = express();
 
-
-app.use(userRoutes); //importando rotas do sevidor
+// Middleware para processar requisições JSON.
+// Esta linha deve vir ANTES das suas rotas.
 app.use(express.json()); 
 
+// Adicione as rotas da sua aplicação
+app.use(userRoutes);
 
 async function start() {
   try {

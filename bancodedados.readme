@@ -1,0 +1,6 @@
+Conectando no banco de dados
+
+NOTION
+
+ERRO DE USUARIO E SENHA INCORRETO
+Erro de importação no import { User } from './entity/User';

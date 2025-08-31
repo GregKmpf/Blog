@@ -213,7 +213,7 @@ Configurar o servidor Express (server.ts) para inicializar a aplicação e a con
 Corrigir diversos erros de configuração, caminhos de arquivos e execução, o que é uma parte normal e essencial do desenvolvimento.
 
 
-------------
+------------ DIA 2
 
 1- Fazendo o servidor rodar normalmente
 
@@ -226,9 +226,16 @@ agora ele roda com npm run dev
 3-  O TypeScript está te dizendo que você estou tentando usar a variável AppDataSource antes de ela ser declarada.
 mudarei isso no server.ts
 
+4-instalar o "driver" para rodar o Pg admin
+npm install pg
 
+5- VÁRIOS PROBLEMAS COM A CONEXÂO DE BANCO DE dados
+senha e usuario
+incorreto caminho do import { User } from './entity/users';
+entre outros
 
-
+6- Testes no POSTMAN
+  
 
 
 
