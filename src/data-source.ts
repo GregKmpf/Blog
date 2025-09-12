@@ -15,9 +15,14 @@ export const AppDataSource = new DataSource({
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    synchronize: true, // Use apenas em desenvolvimento!
+    synchronize: true, // Usar apenas em desenvolvimento
     logging: false,
     entities: [User],
     migrations: [],
     subscribers: [],
 });
+
+/*
+ cuidando da conecção com a database
+ 
+*/

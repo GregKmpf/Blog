@@ -1,7 +1,6 @@
 {
-<<<<<<< HEAD
   "compilerOptions": {
-    "target": "es2016",
+    "target": "es2017",
     "lib": [
       "ES2021"
     ],
@@ -11,6 +10,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "skipLibCheck": true,
     "moduleResolution": "NodeNext",
     "emitDecoratorMetadata": true,
@@ -28,54 +28,4 @@
     "node_modules",
     "dist"
   ]
-=======
-  // Visit https://aka.ms/tsconfig to read more about this file
-  "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
-
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "NodeNext",//mudado para lidar js e ts
-    "moduleResolution": "NodeNext",
-    "target": "esnext",//mudado para lidar com js e ts
-    
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
-
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    /* Adicione/descomente essas duas linhas para o TypeORM */
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-
-
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": false,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
-  }
->>>>>>> d23f6738e686980f7d4ea8ce65f7ec90c341f292
 }

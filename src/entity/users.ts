@@ -12,5 +12,6 @@ export class User {
     @Column({ unique: true })
     email!: string;
 
-    // Adicione outras colunas aqui
 }
+//fala para o typeORM como deve ser tratado como user deve ser representado em uma table
+//typeorm -> usar código typescript invez de sql diretamente

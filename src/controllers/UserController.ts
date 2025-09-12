@@ -41,3 +41,5 @@ export const getUsersController = async (req: Request, res: Response) => {
     return res.status(500).json({ message: 'Internal Server Error' });
   }
 };
+//contém a lógica para lidar com o banco de dados
+//
