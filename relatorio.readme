@@ -177,4 +177,108 @@ npm run dev
 
 12. Configuração do tsconfig.json
 
-Para corrigir erros d
+Para corrigir erros de importação, modifique o tsconfig.json para ajustar a configuração do módulo:
+
+"verbatimModuleSyntax": false
+
+
+13. Apesar de estarmos usando o nodemon, ele ainda está tentando executar o arquivo server.ts diretamente com o node,
+ que só entende arquivos .js (JavaScript), e não .ts (TypeScript). É por isso que ele não consegue encontrar o módulo 
+ e "quebra".
+Para resolver isso, precisamos instruir o nodemon a usar o ts-node, que é um "executor" de TypeScript. 
+Ele compila o código em tempo real, permitindo que o node o entenda
+
+npm install ts-node --save-dev
+
+
+
+
+----DIA 2-----
+Relatorio do que foi feito -IA generation-
+
+Até o momento, a estrutura inicial da sua API está quase completa. Você conseguiu:
+
+Configurar os arquivos package.json e tsconfig.json para o projeto.
+
+Criar a entidade User com o TypeORM.
+
+Estabelecer a conexão com o banco de dados PostgreSQL usando as variáveis de ambiente.
+
+Criar um controlador (UserController) para a lógica de negócio de criação de usuários.
+
+Definir uma rota (user.routes.ts) para expor o endpoint de criação de usuários.
+
+Configurar o servidor Express (server.ts) para inicializar a aplicação e a conexão com o banco de dados.
+
+Corrigir diversos erros de configuração, caminhos de arquivos e execução, o que é uma parte normal e essencial do desenvolvimento.
+
+
+------------ DIA 2
+
+1- Fazendo o servidor rodar normalmente
+
+Instalar as dependencias de desenvolvimento faltantes
+npm install ts-node nodemon --save-dev
+
+2- NPM run dev não funciona pois precis do ts-node para rodar arquivoss ts
+agora ele roda com npm run dev
+
+3-  O TypeScript está te dizendo que você estou tentando usar a variável AppDataSource antes de ela ser declarada.
+mudarei isso no server.ts
+
+4-instalar o "driver" para rodar o Pg admin
+npm install pg
+
+5- VÁRIOS PROBLEMAS COM A CONEXÂO DE BANCO DE dados
+senha e usuario
+incorreto caminho do import { User } from './entity/users';
+entre outros
+
+6- Testes no POSTMAN
+  
+
+
+
+
+
+
+📦 Dependências Instaladas
+
+node – Para rodar JavaScript como servidor.
+
+express – Framework para gerenciamento de servidores web.
+
+typescript – Compilador para TypeScript.
+
+@types/node – Tipos do Node.js para TypeScript.
+
+@types/express – Tipos do Express para TypeScript.
+
+dotenv – Para carregar variáveis de ambiente de um arquivo .env.
+
+typeorm – ORM para conectar com o banco de dados.
+
+nodemon – Ferramenta para reiniciar o servidor durante o desenvolvimento.
+
+🚀 Como Rodar o Projeto
+
+Inicialize o projeto com:
+
+npm start
+
+
+Durante o desenvolvimento, use:
+
+npm run dev
+
+🔧 Erros Comuns e Soluções
+
+Erro de importação com typeorm:
+
+Verifique a configuração do tsconfig.json e adicione "verbatimModuleSyntax": false.
+
+Erro no process.env:
+
+Instale @types/node para garantir que o TypeScript reconheça os tipos de variáveis de ambiente.
+
+Agora o seu projeto está bem estruturado! Se precisar de mais ajuda, é só chamar! 😊
